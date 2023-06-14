@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:map="clr-namespace:Syncfusion.Maui.Maps;assembly=Syncfusion.Maui.Maps"
+             x:Class="ShowCurrentLocation.MainPage">
+
+    <ContentPage.Content>
+        <map:SfMaps>
+            <map:SfMaps.Layer>
+                <map:MapTileLayer x:Name="tileLayer"
+                                  UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                  Radius="5"
+                                  DistanceType="Kilometer">
+                    <map:MapTileLayer.MarkerTemplate>
+                        <DataTemplate>
+                            <Image Source="pin.png"
+                                   Scale="1"
+                                   Aspect="AspectFit"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="Center"
+                                   HeightRequest="35"
+                                   WidthRequest="25" />
+                        </DataTemplate>
+                    </map:MapTileLayer.MarkerTemplate>
+
+                    <map:MapTileLayer.ZoomPanBehavior>
+                        <map:MapZoomPanBehavior ZoomLevel="1" />
+                    </map:MapTileLayer.ZoomPanBehavior>
+
+                    <map:MapTileLayer.Markers>
+                        <map:MapMarkerCollection>
+                            <map:MapMarker x:Name="marker" />
+                        </map:MapMarkerCollection>
+                    </map:MapTileLayer.Markers>
+                </map:MapTileLayer>
+            </map:SfMaps.Layer>
+        </map:SfMaps>
+    </ContentPage.Content>
+
+</ContentPage>
