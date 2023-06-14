@@ -2,8 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:map="clr-namespace:Syncfusion.Maui.Maps;assembly=Syncfusion.Maui.Maps"
+             xmlns:local="clr-namespace:ShowCurrentLocation"
              x:Class="ShowCurrentLocation.MainPage">
 
+    <ContentPage.Behaviors>
+        <local:MapsBehavior />
+    </ContentPage.Behaviors>
+    
     <ContentPage.Content>
         <map:SfMaps>
             <map:SfMaps.Layer>
